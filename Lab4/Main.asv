@@ -1,0 +1,16 @@
+img = imread('Moire1.bmp');
+I = rgb2gray(img);
+I = im2double(I);
+figure , imshow(I,[]),title("GrayImg");
+fouri = fft2(I);
+figure , imshow(fouri,[]),title("Fourir Img");
+shiftImg = fftshift(fouri);
+figure , imshow(shiftImg,[]),title("Shiftted Img");
+LogImg = log(abs(shiftImg));
+figure , imshow(LogImg,[]),title("Log Img");
+[H W] = size(img);
+mask = ones(size(img));
+mask(*9 = 0;
+mask() = 0;
+mask() = 0;
+mask() = 0;
